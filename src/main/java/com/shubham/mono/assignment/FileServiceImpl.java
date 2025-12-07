@@ -1,7 +1,7 @@
 package com.shubham.mono.assignment;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileServiceImpl implements FileService {
-    private static final Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
+    private static final Logger log = LogManager.getLogger(FileServiceImpl.class);
 
     @Override
     public Mono<String> readFile(String filePath) {

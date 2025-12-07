@@ -1,14 +1,14 @@
 package com.shubham.mono;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 public class MonoFromFuture {
-    private static final Logger log = LoggerFactory.getLogger(MonoFromFuture.class);
+    private static final Logger log = LogManager.getLogger(MonoFromFuture.class);
 
     static void main() throws IOException {
         Mono.fromFuture(() -> getUserInfo(8))
