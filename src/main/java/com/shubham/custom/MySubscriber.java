@@ -14,6 +14,10 @@ public class MySubscriber implements Subscriber<String> {
         this.count = count;
     }
 
+    public void request(int n){
+        subscription.request(n);
+    }
+
     @Override
     public void onSubscribe(Subscription s) {
         log.info("onSubscribe: {}", s);
